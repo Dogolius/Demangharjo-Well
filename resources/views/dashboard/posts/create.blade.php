@@ -39,6 +39,10 @@
                 @enderror
             </div>
             <div class="mb-3">
+                <label for="image" class="form-label">Post Image</label>
+                <input class="form-control" type="file" name="image" id="image" required>
+            </div>
+            <div class="mb-3">
                 <label for="body" class="form-label">Body</label>
                 <input id="body" value="{{ old('body') }}" class="@error('body') is-invalid @enderror" type="hidden" name="body" required>
                 <trix-editor input="body"></trix-editor>
