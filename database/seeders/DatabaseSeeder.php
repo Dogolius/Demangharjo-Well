@@ -6,6 +6,7 @@ use Illuminate\Database\Seeder;
 use App\Models\User;
 use App\Models\Category;
 use App\Models\Post;
+use App\Models\Report;
 use GuzzleHttp\Promise\Create;
 
 class DatabaseSeeder extends Seeder
@@ -42,6 +43,8 @@ class DatabaseSeeder extends Seeder
         ]);
 
         Post::factory(20)->create();
+
+        Report::factory(20)->create();
 
         // Post::create([
         //     'title' => "Judul Pertama",
