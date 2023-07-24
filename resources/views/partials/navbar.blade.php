@@ -1,22 +1,25 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-danger">
     <div class="container">
-      <a class="navbar-brand" href="#">MyLaravel</a>
+      <a class="navbar-brand" href="#">Demangharjo Well</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link {{ Request::is('/') ? "active" : "" }}" href="/">Home</a> 
+            <a class="nav-link {{ Request::is('/') ? "active" : "" }}" href="/">Beranda</a> 
           </li>
           <li class="nav-item">
-            <a class="nav-link {{ Request::is('about') ? "active" : "" }}" href="/about">About</a> 
+            <a class="nav-link {{ Request::is('about') ? "active" : "" }}" href="/about">Tentang Demangharjo</a> 
           </li>
           <li class="nav-item">
-            <a class="nav-link {{ Request::is('blog') ? "active" : "" }}" href="/blog">Blog</a> 
+            <a class="nav-link {{ Request::is('blog') ? "active" : "" }}" href="/blog">Seputar Demangharjo</a> 
           </li>
           <li class="nav-item">
-            <a class="nav-link {{ Request::is('categories') ? "active" : "" }}" href="/categories">Categories</a>
+            <a class="nav-link {{ Request::is('categories') ? "active" : "" }}" href="/categories">Kategori</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link {{ Request::is('room') ? "active" : "" }}" href="/room">Bilik Aduan</a>
           </li>
         </ul>
         <ul class="navbar-nav ms-auto">
@@ -26,7 +29,7 @@
               Welcome back, {{ auth()->user()->name }}
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="/dashboard"><i class="bi bi-menu-button-wide-fill"></i> My Dashboard</a></li>
+              <li><a class="dropdown-item" href="/dashboard/reports"><i class="bi bi-menu-button-wide-fill"></i> My Dashboard</a></li>
               <li><hr class="dropdown-divider"></li>
               <li>
                 <form action="logout" method="POST">
