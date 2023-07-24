@@ -14,7 +14,7 @@
         display: none;
       }
     </style>
-    <link rel="icon" href="img/logo_tegal.png">
+    <link rel="icon" href="/img/logo_tegal.png">
   </head>
   <body>
     @include('partials/navbar')
