@@ -4,11 +4,11 @@
     <div class="container">
         <div class="row">
             @foreach ($categories as $category)
-                <div class="col-md-4 mb-6">
+                <div class="col-md-4 mb-4">
                     <div class="card text-bg-dark">
                         @if ($category->image)
-                            <div style="max-height: 500px; overflow:hidden">
-                                <img src="{{ asset('storage/' . $category->image) }}" class="card-img-top img-fluid my-3" alt="{{ $category->name }}">
+                            <div style="height: 270px; overflow:hidden">
+                                <img src="{{ asset('storage/' . $category->image) }}" class="card-img" alt="{{ $category->name }}">
                             </div>
                         @else
                             <img src="https://source.unsplash.com/600x400?{{ $category->name }}" class="card-img" alt="{{ $category->name }}">
@@ -22,4 +22,3 @@
         </div>
     </div>
 @endsection
-
