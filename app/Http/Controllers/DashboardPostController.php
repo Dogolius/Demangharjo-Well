@@ -104,8 +104,6 @@ class DashboardPostController extends Controller
     public function update(Request $request, Post $post)
     {
         //
-
-
         $rules = [
             'title' => 'required|max:255',
             'slug' => 'required',

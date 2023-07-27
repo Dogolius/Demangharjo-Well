@@ -44,7 +44,13 @@
                 <div class="col-md-4 mb-3">
                     <div class="card">
                         <div class="position-absolute bg-dark px-3 py-2 " style="background-color: rgba(0, 0, 0, 0.5)"><a href="/blog?category={{ $postingan->category->slug }}" class="text-decoration-none text-white">{{ $postingan->category->name }}</a></div>
-                        <img src="https://source.unsplash.com/600x400?{{ $postingan->category->name }}" class="card-img-top" alt="{{ $postingan->category->name }}">
+                        @if ($postingan->image)
+                            <div style="max-height: 500px; overflow:hidden">
+                                <img src="{{ asset('storage/' . $postingan->image) }}" class="card-img-top img-fluid my-3" alt="{{ $postingan->category->name }}">
+                            </div>
+                        @else
+                            <img src="https://source.unsplash.com/600x400?{{ $postingan->category->name }}" class="card-img-top" alt="{{ $postingan->category->name }}">
+                        @endif
                         <div class="card-body">
                         <h5 class="card-title">{{ $postingan->title }}</h5>
                         <p>By <a href="/blog?user={{ $postingan->user->username }}" class="text-decoration-none">{{ $postingan->user->name }}</a>

@@ -27,8 +27,7 @@
                 <td>{{ $loop->iteration }}</td>
                 <td>{{ $category->name }}</td>
                 <td>
-                    <a href="/dashboard/categories/{{ $category->id }}" class="badge bg-info"><span data-feather="eye"></span></a>
-                    <a href="/dashboard/categories/{{ $category->id }}/edit" class="badge bg-warning"><span data-feather="edit-2"></span></a>
+                    <a href="/blog?category={{ $category->slug }}" class="badge bg-info"><span data-feather="eye"></span></a>
                     <form action="/dashboard/categories/{{ $category->id }}" class="d-inline" method="POST">
                       @csrf
                       @method('delete')
