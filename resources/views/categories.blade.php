@@ -1,6 +1,6 @@
 @extends('layouts/main')
 @section('container')
-    <h1 class="mb-5">Kategori</h1>
+    <h1 class="mb-5 text-light text-center">Kategori</h1>
     <div class="container">
         <div class="row">
             @foreach ($categories as $category)
