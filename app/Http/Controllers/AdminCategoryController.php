@@ -106,9 +106,16 @@ class AdminCategoryController extends Controller
     {
         $posts = Post::where('category_id', $category->id)->get();
         foreach($posts as $post){
+            if($post->image){
+                $post_image = $post->image;
+                unlink(storage_path('app\public\\'.$post_image));
+            }
             Post::destroy($post->id);
         }
-        
+        if($category->image){
+            $category_image = $category->image;
+            unlink(storage_path('app\public\\'.$category_image));
+        }
         Category::destroy($category->id);
         return redirect('/dashboard/categories')->with('success', 'Category berhasil dihapus');
     }

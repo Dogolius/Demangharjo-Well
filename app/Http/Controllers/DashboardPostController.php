@@ -134,6 +134,10 @@ class DashboardPostController extends Controller
     public function destroy(Post $post)
     {
         //
+        if($post->image){
+            $post_image = $post->image;
+            unlink(storage_path('app\public\\'.$post_image));
+        }
         Post::destroy($post->id);
 
         return redirect('/dashboard/posts')->with('success', 'Post berhasil dihapus');
