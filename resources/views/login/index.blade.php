@@ -16,11 +16,11 @@
       @endif
       
       <main class="form-signin w-100 m-auto">
-          <h1 class="h3 mb-3 fw-normal text-center">Please log in</h1>
+          <h1 class="h3 mb-3 fw-normal text-center text-light">Please log in</h1>
           <form method="POST" action="/login">
             @csrf
             <div class="d-flex justify-content-center">
-              <img class="mb-4" src="https://karedok.net/old/files/u1/laravel-logo.jpg" alt="" width="136" height="57">
+              <img class="mb-4" src="/img/logo_tegal.png" alt="" width="170" height="136">
             </div>
         
             <div class="form-floating">
@@ -44,7 +44,7 @@
             <button class="w-100 btn btn-lg btn-primary" type="submit">Login</button>
             <p class="mt-2 mb-2 text-muted">&copy; 2023</p>
           </form>
-          <small class="d-block text-center mt-1">Not registered? <a href="/register">Register Now</a></small>
+          <small class="d-block text-center text-light mt-1">Not registered? <a href="/register">Register Now</a></small>
       </main>
     </div>
 </div>

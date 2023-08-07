@@ -22,7 +22,7 @@ class PostController extends Controller
         }
 
         return view("blog", [
-            "title" => "All post" . $title,
+            "title" => "Seputar Demangharjo" . $title,
             "active" => "blog",
             "post" => Post::latest()->filter(request(['search', 'category', 'user']))->paginate(10)->withQueryString()
         ]);

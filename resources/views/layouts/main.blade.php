@@ -19,6 +19,78 @@
         background-attachment: fixed;
         background-image: url('/img/pandemidua.jpg');
       }
+      .carousel .carousel-item {
+        height: 500px;
+      }
+
+      .hai {
+        position: absolute;
+        object-fit:contain;
+        left: 0;
+        min-height: 500px;
+      }
+
+      .carousel-item h3 {
+        text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+      }
+      .carousel-item p {
+        font-size: 1em;
+        text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+      }
+      @import url(https://fonts.googleapis.com/css?family=Montserrat);
+
+
+.ticker {
+  overflow: hidden;
+  width: 100%;
+  padding: 5px 0 120px;
+  position:sticky;
+  bottom:   ;
+  left: 0;
+  font-family: 'Montserrat', Arial;
+}
+
+.ticker-title {
+  width: 2500px;
+  margin-top: 5px;
+  padding-bottom: 5px;
+  color: #065b70;
+  font-size: 20px;
+  text-transform: uppercase;
+  text-shadow: 0 0 2px #065b70;
+  
+  background: linear-gradient(135deg,  rgba(74,255,255,1) 0%,rgba(58,208,221,1) 11%,rgba(38,153,181,1) 24%,rgba(29,127,162,0.93) 30%,rgba(29,127,162,0.5) 68%); /* W3C */
+}
+
+.ticker-title > * {
+  display: inline-block;
+  margin-right: 50px;
+  animation: title 6s infinite linear;
+}
+
+@keyframes title {
+  0% {transform: translateX(0);}
+  100% {transform: translateX(-233px);}
+}
+
+.ticker-news {
+  width: 7000px;
+  padding: 24px 0;
+  color: #ffffff;
+  font-size: 28px;
+  text-shadow: 0 0 5px rgba(0,0,0,1); 
+  background: linear-gradient(135deg,  rgba(74,255,255,1) 0%,rgba(29,127,162,1) 11%,rgba(29,127,162,0.5) 29%); /* W3C */
+}
+
+.ticker-news > * {
+  display: inline-block;
+  animation: news 20s infinite linear;
+}
+
+@keyframes news {
+  0% {transform: translateX(1500px);}
+  100% {transform: translateX(-2500px);}
+}
     </style>
     <link rel="icon" href="/img/logo_tegal.png">
   </head>
@@ -28,6 +100,30 @@
         @yield('container')
     </div>
 
+    
+    <div class="ticker">
+      <div class="ticker-title">
+        <span>Pengumuman</span>
+        <span>Pengumuman</span>
+        <span>Pengumuman</span>
+        <span>Pengumuman</span>
+        <span>Pengumuman</span>
+        <span>Pengumuman</span>
+        <span>Pengumuman</span>
+        <span>Pengumuman</span>
+        <span>Pengumuman</span>
+        <span>Pengumuman</span>
+      </div>
+      <div class="ticker-news">
+        <span>
+          <span>| Informasi kontak desa yang dapat dihubungi adalah sebagai berikut</span>
+          <span>| E-mail: demangharjo@gmail.com</span>
+          <span>| Nomor Telp/WA: 082134567890</span>
+          <span>| Instagram: desa_wisata_demangharjo</span>
+          <span>| Facebook: Seputar Demangharjo</span>
+        </span>
+      </div>
+    </div>
 
     <div class="b-example-divider"></div>
 
