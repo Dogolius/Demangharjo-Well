@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AboutController;
 use App\Http\Controllers\AdminCategoryController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DashboardPostController;
@@ -61,3 +62,9 @@ Route::get('/dashboard/posts/checkSlug', [DashboardPostController::class, 'check
 Route::get('/dashboard/reports', [DashboardReportController::class, 'index'])->middleware('auth');
 Route::get('/dashboard/reports/{report:id}', [DashboardReportController::class, 'show'])->middleware('auth');
 Route::delete('/dashboard/reports/{report:id}', [DashboardReportController::class, 'destroy'])->middleware('auth');
+
+Route::get('/about/history', [AboutController::class, 'history']);
+Route::get('/about/structure', [AboutController::class, 'structure']);
+Route::get('/about/vision', [AboutController::class, 'vision']);
+Route::get('/about/apbd', [AboutController::class, 'apbd']);
+Route::get('/about/destination', [AboutController::class, 'destination']);

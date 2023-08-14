@@ -44,7 +44,6 @@
             <button class="w-100 btn btn-lg btn-primary" type="submit">Login</button>
             <p class="mt-2 mb-2 text-muted">&copy; 2023</p>
           </form>
-          <small class="d-block text-center text-light mt-1">Not registered? <a href="/register">Register Now</a></small>
       </main>
     </div>
 </div>

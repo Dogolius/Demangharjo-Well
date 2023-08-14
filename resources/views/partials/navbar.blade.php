@@ -1,6 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: darkblue">
     <div class="container">
-      <a class="navbar-brand" href="#">Desa Demangharjo</a>
+      <img src="/img/logo_tegal.png" height="50px" alt="">
+      <a class="navbar-brand font-weight-bolder" href="#"><h6 class="animate-character">Desa Demangharjo</h6></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -9,8 +10,16 @@
           <li class="nav-item">
             <a class="nav-link {{ Request::is('/') ? "active" : "" }}" href="/">Beranda</a> 
           </li>
-          <li class="nav-item">
-            <a class="nav-link {{ Request::is('about') ? "active" : "" }}" href="/about">Tentang Demangharjo</a> 
+          <li class="nav-item dropdown">
+            <a class="nav-link {{ Request::is('about*') ? "active" : "" }} dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Tentang Demangharjo
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="/about/structure">Struktur Organisasi</a></li>
+              <li><a class="dropdown-item" href="/about/vision">Visi & Misi</a></li>
+              <li><a class="dropdown-item" href="/about/apbd">Transparansi APBDesa</a></li>
+              <li><a class="dropdown-item" href="/about/destination">Tempat Wisata</a></li>
+            </ul>
           </li>
           <li class="nav-item">
             <a class="nav-link {{ Request::is('blog') ? "active" : "" }}" href="/blog">Seputar Demangharjo</a> 

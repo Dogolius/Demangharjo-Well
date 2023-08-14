@@ -19,6 +19,12 @@
             Post Categories
           </a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link {{ Request::is('dashboard/password*') ? 'active' : '' }}" href="/dashboard/password">
+            <span data-feather="grid" class="align-text-bottom"></span>
+            Change Password
+          </a>
+        </li>
       </ul>  
     </div>
   </nav>

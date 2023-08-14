@@ -5,6 +5,11 @@
     <div class="container">
         <div class="row justify-content-center">
             <h1 class="mb-5 text-light text-center">Bilik Aduan</h1>
+            @if (session()->has('success'))
+                <div class="alert alert-success col-lg-8" role="alert">
+                    {{ session('success') }}
+                </div>
+            @endif
             <div class="col-lg-8 bg-light px-2 py-6 rounded">
                 <form action="/room" method="POST" enctype="multipart/form-data">
                 @csrf
@@ -19,7 +24,7 @@
                     </div>
                     <div class="m-3">
                         <label for="image" class="form-label">Keterangan Gambar</label>
-                        <input class="form-control @error('image') is-invalid @enderror" type="file" name="image" id="image" required>
+                        <input class="form-control @error('image') is-invalid @enderror" type="file" name="image" id="image">
                         @error('image')
                         <div class="invalid-feedback">
                           {{ $message }}
@@ -37,7 +42,7 @@
                         @enderror
                     </div>
                     <div class="mx-3 mb-3">
-                        <button type="submit" class="btn btn-primary">Sampaikan Aduan</button>
+                        <button onclick="return confirm('Apa anda yakin untuk mengirim aduan?')" type="submit" class="btn btn-primary">Sampaikan Aduan</button>
                     </div>
                 </form>
             </div>

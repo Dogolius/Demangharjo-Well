@@ -54,12 +54,11 @@
   width: 2500px;
   margin-top: 5px;
   padding-bottom: 5px;
-  color: #065b70;
+  color: white;
   font-size: 20px;
   text-transform: uppercase;
-  text-shadow: 0 0 2px #065b70;
   
-  background: linear-gradient(135deg,  rgba(74,255,255,1) 0%,rgba(58,208,221,1) 11%,rgba(38,153,181,1) 24%,rgba(29,127,162,0.93) 30%,rgba(29,127,162,0.5) 68%); /* W3C */
+  background: black
 }
 
 .ticker-title > * {
@@ -76,10 +75,10 @@
 .ticker-news {
   width: 7000px;
   padding: 24px 0;
-  color: #ffffff;
+  color: black;
   font-size: 28px;
-  text-shadow: 0 0 5px rgba(0,0,0,1); 
-  background: linear-gradient(135deg,  rgba(74,255,255,1) 0%,rgba(29,127,162,1) 11%,rgba(29,127,162,0.5) 29%); /* W3C */
+  text-shadow: 0 0 5px rgb(190, 187, 187); 
+  background: white 
 }
 
 .ticker-news > * {
@@ -89,9 +88,38 @@
 
 @keyframes news {
   0% {transform: translateX(1500px);}
-  100% {transform: translateX(-2500px);}
+  100% {transform: translateX(-1500px);}
 }
-    </style>
+
+.animate-character
+{
+   text-transform: uppercase;
+  background-image: linear-gradient(
+    -225deg,
+    #231557 0%,
+    #44107a 29%,
+    #ff1361 67%,
+    #fff800 100%
+  );
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% auto;
+  color: #fff;
+  background-clip: text;
+  text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 2s linear infinite;
+  display: inline-block;
+}
+
+@keyframes textclip {
+  to {
+    background-position: 200% center;
+  }
+}
+
+</style>
     <link rel="icon" href="/img/logo_tegal.png">
   </head>
   <body class="d-flex flex-column h-100">
@@ -116,11 +144,8 @@
       </div>
       <div class="ticker-news">
         <span>
-          <span>| Informasi kontak desa yang dapat dihubungi adalah sebagai berikut</span>
-          <span>| E-mail: demangharjo@gmail.com</span>
-          <span>| Nomor Telp/WA: 082134567890</span>
-          <span>| Instagram: desa_wisata_demangharjo</span>
-          <span>| Facebook: Seputar Demangharjo</span>
+          <span>| Untuk bantuan lebih lanjut dapat menghubungi alamat email berikut</span>
+          <span>| E-mail: pemerintahdesademangharjo@gmail.com</span>
         </span>
       </div>
     </div>

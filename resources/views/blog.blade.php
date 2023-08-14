@@ -64,7 +64,7 @@
         </div>
     </div>
     @else
-        <p class="text-center fs-4">No posts found.</p>
+        <p class="text-center text-light fs-4">No posts found.</p>
     @endif
     {{ $post->links() }}
 @endsection

@@ -4,7 +4,7 @@
 
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-md-8">
+            <div class="col-md-8 bg-light rounded p-2">
                 @if ($post->image)
                     <div style="max-height: 500px; overflow:hidden">
                         <img src="{{ asset('storage/' . $post->image) }}" class="card-img-top img-fluid my-3" alt="{{ $post->category->name }}">
@@ -19,7 +19,7 @@
                 </article>
                 
                 <br>
-                <a href="/blog" class="btn btn-danger">Kembali ke blog</a>
+                <a href="/blog" class="btn text-light" style="background-color: darkblue">Kembali ke blog</a>
             </div>
         </div>
     </div>

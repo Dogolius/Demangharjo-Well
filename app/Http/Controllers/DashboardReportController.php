@@ -15,7 +15,7 @@ class DashboardReportController extends Controller
     public function index()
     {
         return view('dashboard.reports.index',[
-            'reports' => Report::all()
+            'reports' => Report::latest()->get()
         ]);
     }
 

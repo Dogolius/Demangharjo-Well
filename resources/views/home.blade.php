@@ -1,7 +1,8 @@
 @extends('layouts/main')
 
 @section('container')
-  <h1 class="text-light text-center mb-3">Selamat Datang</h1>
+  
+  <h1 class="text-light text-center mb-3 content">Selamat Datang</h1>
 
   <div id="carouselExampleCaptions" class="carousel slide mb-3">
     <div class="carousel-indicators">
@@ -11,24 +12,24 @@
     </div>
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img src="/img/logo_tegal.png" class="d-block w-100" alt="...">
-        <div class="carousel-caption d-none d-md-block">
-          <h3>Selamat datang di Desa Demangharjo</h3>
-          <p>Some representative placeholder content for the first slide.</p>
+        <img src="/img/balai_desa.jpg" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-block">
+          <h3>Selamat Datang di Desa Demangharjo</h3>
+          <p>Desa yang penuh dengan keindahan</p>
         </div>
       </div>
       <div class="carousel-item">
         <img src="/img/sawah.jpg" class="d-block w-100" alt="...">
-        <div class="carousel-caption d-none d-md-block">
+        <div class="carousel-caption d-block">
           <h3 class="border-black">Sumber Daya Alam</h3>
           <p>Demangharjo penuh dengan sumber daya alam yang melimpah</p>
         </div>
       </div>
       <div class="carousel-item">
-        <img src="/img/pandemi.jpg" class="d-block w-100" alt="...">
-        <div class="carousel-caption d-none d-md-block">
-          <h3>Wisata</h3>
-          <p>Pantai Demangharjo Indah (Pandemi), landmark Desa Wisata Demangharjo </p>
+        <img src="/img/pandemidua.jpg" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-block">
+          <h3>Tempat Wisata Terbaik</h3>
+          <p>Pantai Demangan Indah (Pandemi), wisata terbaik Desa Demangharjo </p>
         </div>
       </div>
     </div>
