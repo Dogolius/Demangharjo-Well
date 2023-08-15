@@ -21,7 +21,7 @@
         </li>
         <li class="nav-item">
           <a class="nav-link {{ Request::is('dashboard/password*') ? 'active' : '' }}" href="/dashboard/password">
-            <span data-feather="grid" class="align-text-bottom"></span>
+            <span data-feather="lock" class="align-text-bottom"></span>
             Change Password
           </a>
         </li>
