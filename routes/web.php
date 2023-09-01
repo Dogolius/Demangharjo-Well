@@ -5,6 +5,7 @@ use App\Http\Controllers\AdminCategoryController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DashboardPostController;
 use App\Http\Controllers\DashboardReportController;
+use App\Http\Controllers\DocumentController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ReportController;
@@ -61,6 +62,7 @@ Route::post('/room', [ReportController::class, 'store']);
 
 Route::resource('/dashboard/categories', AdminCategoryController::class)->except('show')->middleware('auth');
 Route::resource('/dashboard/posts', DashboardPostController::class)->middleware('auth');
+Route::resource('/dashboard/documents', DocumentController::class)->middleware('auth');
 Route::get('/dashboard/posts/checkSlug', [DashboardPostController::class, 'checkSlug'])->middleware('auth');
 Route::get('/dashboard/reports', [DashboardReportController::class, 'index'])->middleware('auth');
 Route::get('/dashboard/reports/{report:id}', [DashboardReportController::class, 'show'])->middleware('auth');

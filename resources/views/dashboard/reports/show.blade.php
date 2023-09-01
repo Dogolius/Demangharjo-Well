@@ -15,8 +15,6 @@
             <div style="max-height: 350px; overflow:hidden">
                 <img src="{{ asset('storage/' . $report->image) }}" class="card-img-top img-fluid my-3" alt="{{ $report->title }}">
             </div>
-            @else
-                <img src="https://source.unsplash.com/1200x400?{{ $report->title }}" class="card-img-top img-fluid my-3" alt="{{ $report->title }}">
             @endif
             
             <h5>{{ $report->title }}</h5>

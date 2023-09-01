@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use App\Models\User;
 use App\Models\Category;
+use App\Models\Document;
 use App\Models\Post;
 use App\Models\Report;
 use GuzzleHttp\Promise\Create;
@@ -26,6 +27,12 @@ class DatabaseSeeder extends Seeder
             'email' => "pemerintahdesademangharjo@gmail.com",
             'is_admin' => 1,
             'password' => bcrypt("hai")
+        ]);
+        Document::create([
+            'realisasi' => "-",
+            'transparansi' => "-",
+            'struktur' => "-",
+            'visi' => "-",
         ]);
 
         // Category::create([

@@ -25,6 +25,12 @@
             Change Password
           </a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link {{ Request::is('dashboard/documents*') ? 'active' : '' }}" href="/dashboard/documents/1/edit">
+            <span data-feather="picture" class="align-text-bottom"></span>
+            Edit Data
+          </a>
+        </li>
       </ul>  
     </div>
   </nav>

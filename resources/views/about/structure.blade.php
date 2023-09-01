@@ -2,5 +2,5 @@
 
 @section('container')
     <h1 class="text-center text-light mb-3">{{ $title }}</h1>
-    <img src="/img/struktur_organisasi.png" width="100%" alt="" srcset="" class="">
+    <img src="{{ asset('storage/' . $document->struktur) }}" width="100%" alt="">
 @endsection

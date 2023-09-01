@@ -20,7 +20,7 @@
         background-image: url('/img/pandemidua.jpg');
       }
       .carousel .carousel-item {
-        height: 500px;
+        height: 500px;  
       }
 
       .hai {
@@ -44,8 +44,8 @@
   overflow: hidden;
   width: 100%;
   padding: 5px 0 120px;
-  position:sticky;
-  bottom:   ;
+  position:static;
+  bottom:   0;
   left: 0;
   font-family: 'Montserrat', Arial;
 }
