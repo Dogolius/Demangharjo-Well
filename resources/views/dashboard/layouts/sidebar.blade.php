@@ -27,8 +27,14 @@
         </li>
         <li class="nav-item">
           <a class="nav-link {{ Request::is('dashboard/documents*') ? 'active' : '' }}" href="/dashboard/documents/1/edit">
-            <span data-feather="picture" class="align-text-bottom"></span>
+            <span data-feather="image" class="align-text-bottom"></span>
             Edit Data
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/">
+            <span data-feather="corner-down-left" class="align-text-bottom"></span>
+            Kembali ke Home
           </a>
         </li>
       </ul>  
