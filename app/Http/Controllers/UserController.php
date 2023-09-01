@@ -12,7 +12,8 @@ class UserController extends Controller
     {
         //
         return view('dashboard.password.edit', [
-            'user' => $user
+            'user' => $user,
+            'title' => "Change Password"
         ]);
         
     }
