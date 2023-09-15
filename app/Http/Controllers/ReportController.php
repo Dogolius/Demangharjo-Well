@@ -34,7 +34,8 @@ class ReportController extends Controller
         ]);
 
         if($request->file('image')){
-            $validatedData['image'] = $request->file('image')->store('report-images');
+            $imagePath = $request->file('image')->store('public/report-images');
+            $validatedData['image'] = preg_replace('[public/]', '', $imagePath);
         }
 
         Report::create($validatedData);

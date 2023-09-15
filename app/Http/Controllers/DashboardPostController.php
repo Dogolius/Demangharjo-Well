@@ -6,6 +6,7 @@ use App\Models\Post;
 use App\Models\Category;
 use Cviebrock\EloquentSluggable\Services\SlugService;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
 class DashboardPostController extends Controller
@@ -54,7 +55,8 @@ class DashboardPostController extends Controller
         ]);
 
         if($request->file('image')){
-            $validatedData['image'] = $request->file('image')->store('post-images');
+            $imagePath = $request->file('image')->store('public/post-images');
+            $validatedData['image'] = preg_replace('[public/]', '', $imagePath);
         }
 
         $validatedData['user_id'] = auth()->user()->id;
@@ -137,7 +139,7 @@ class DashboardPostController extends Controller
         //
         if($post->image){
             $post_image = $post->image;
-            unlink(storage_path('app\public\\'.$post_image));
+            unlink(storage_path('app/public/'.$post_image));
         }
         Post::destroy($post->id);
 

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Report;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class DashboardReportController extends Controller
 {
@@ -42,7 +43,7 @@ class DashboardReportController extends Controller
     {
         if($report->image){
             $report_image = $report->image;
-            unlink(storage_path('app\public\\'.$report_image));
+            unlink(storage_path('app/public/'.$report_image));
         }
         Report::destroy($report->id);
         return redirect('/dashboard/reports')->with('success', 'Report berhasil dihapus');

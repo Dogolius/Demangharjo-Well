@@ -54,7 +54,8 @@ class AdminCategoryController extends Controller
         ]);
 
         if($request->file('image')){
-            $validatedData['image'] = $request->file('image')->store('categories-images');
+            $imagePath = $request->file('image')->store('public/categories-images');
+            $validatedData['image'] = preg_replace('[public/]', '', $imagePath);
         }
 
         Category::create($validatedData);
@@ -108,13 +109,13 @@ class AdminCategoryController extends Controller
         foreach($posts as $post){
             if($post->image){
                 $post_image = $post->image;
-                unlink(storage_path('app\public\\'.$post_image));
+                unlink(storage_path('app/public/'.$post_image));
             }
             Post::destroy($post->id);
         }
         if($category->image){
             $category_image = $category->image;
-            unlink(storage_path('app\public\\'.$category_image));
+            unlink(storage_path('app/public/'.$post_image));
         }
         Category::destroy($category->id);
         return redirect('/dashboard/categories')->with('success', 'Category berhasil dihapus');

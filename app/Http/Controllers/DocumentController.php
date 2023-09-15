@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Document;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class DocumentController extends Controller
 {
@@ -83,9 +84,10 @@ class DocumentController extends Controller
         if($request->file('realisasi')){
             if($document->realisasi != "-"){
                 $image = $document->realisasi;
-                unlink(storage_path('app\public\\'.$image));
+                unlink(storage_path('app/public/'.$image));
             }
-            $validatedData['realisasi'] = $request->file('realisasi')->store('document-images');
+            $imagePath = $request->file('realisasi')->store('public/document-images');
+            $validatedData['realisasi'] = preg_replace('[public/]', '', $imagePath);
         } else{
             $validatedData['realisasi'] = $document->realisasi;
         }
@@ -94,9 +96,10 @@ class DocumentController extends Controller
         if($request->file('transparansi')){
             if($document->transparansi != "-"){
                 $image = $document->transparansi;
-                unlink(storage_path('app\public\\'.$image));
+                unlink(storage_path('app/public/'.$image));
             }
-            $validatedData['transparansi'] = $request->file('transparansi')->store('document-images');
+            $imagePath = $request->file('transparansi')->store('public/document-images');
+            $validatedData['transparansi'] = preg_replace('[public/]', '', $imagePath);
         }else{
             $validatedData['transparansi'] = $document->transparansi;
         }
@@ -105,9 +108,10 @@ class DocumentController extends Controller
         if($request->file('struktur')){
             if($document->struktur != "-"){
                 $image = $document->struktur;
-                unlink(storage_path('app\public\\'.$image));
+                unlink(storage_path('app/public/'.$image));
             }
-            $validatedData['struktur'] = $request->file('struktur')->store('document-images');
+            $imagePath = $request->file('struktur')->store('public/document-images');
+            $validatedData['struktur'] = preg_replace('[public/]', '', $imagePath);
         }else{
             $validatedData['struktur'] = $document->struktur;
         }
@@ -116,9 +120,10 @@ class DocumentController extends Controller
         if($request->file('visi')){
             if($document->visi != "-"){
                 $image = $document->visi;
-                unlink(storage_path('app\public\\'.$image));
+                unlink(storage_path('app/public/'.$image));
             }
-            $validatedData['visi'] = $request->file('visi')->store('document-images');
+            $imagePath = $request->file('visi')->store('public/document-images');
+            $validatedData['visi'] = preg_replace('[public/]', '', $imagePath);
         }else{
             $validatedData['visi'] = $document->visi;
         }
