@@ -27,9 +27,11 @@
           <li class="nav-item">
             <a class="nav-link {{ Request::is('categories') ? "active" : "" }}" href="/categories">Kategori</a>
           </li>
+          @auth
           <li class="nav-item">
             <a class="nav-link {{ Request::is('room') ? "active" : "" }}" href="/room">Bilik Aduan</a>
           </li>
+          @endauth
         </ul>
         <ul class="navbar-nav ms-auto">
         @auth
@@ -38,8 +40,10 @@
               Welcome back, {{ auth()->user()->name }}
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              @if(auth()->user()->username === 'admin')
               <li><a class="dropdown-item" href="/dashboard/reports"><i class="bi bi-menu-button-wide-fill"></i> My Dashboard</a></li>
               <li><hr class="dropdown-divider"></li>
+              @endif
               <li>
                 <form action="logout" method="POST">
                   @csrf

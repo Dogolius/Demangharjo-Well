@@ -115,7 +115,7 @@ class AdminCategoryController extends Controller
         }
         if($category->image){
             $category_image = $category->image;
-            unlink(storage_path('app/public/'.$post_image));
+            unlink(storage_path('app/public/'.$category_image));
         }
         Category::destroy($category->id);
         return redirect('/dashboard/categories')->with('success', 'Category berhasil dihapus');

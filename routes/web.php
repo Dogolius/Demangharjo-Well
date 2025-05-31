@@ -7,6 +7,7 @@ use App\Http\Controllers\DashboardPostController;
 use App\Http\Controllers\DashboardReportController;
 use App\Http\Controllers\DocumentController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ReportController;
 use App\Http\Controllers\UserController;
@@ -37,8 +38,8 @@ Route::get('/login', [LoginController::class, 'index'])->name('login')->middlewa
 Route::post('/login', [LoginController::class, 'authenticate']);
 Route::post('/logout', [LoginController::class, 'logout']);
 
-// Route::get('/register', [RegisterController::class, 'index'])->middleware('guest');
-// Route::post('/register', [RegisterController::class, 'store']);
+Route::get('/register', [RegisterController::class, 'index'])->middleware('guest');
+Route::post('/register', [RegisterController::class, 'store']);
 
 // Route tentang demangharjo
 Route::get('/about/history', [AboutController::class, 'history']);
@@ -57,17 +58,17 @@ Route::get('post/{postingan:slug}', [PostController::class, 'show']);
 Route::get('/categories', [CategoryController::class, 'index']);
 
 // Route bilik aduan
-Route::get('/room', [ReportController::class, 'create']);
-Route::post('/room', [ReportController::class, 'store']);
+Route::get('/room', [ReportController::class, 'create'])->middleware('auth');
+Route::post('/room', [ReportController::class, 'store'])->middleware('auth');
 
-Route::resource('/dashboard/categories', AdminCategoryController::class)->except('show')->middleware('auth');
-Route::resource('/dashboard/posts', DashboardPostController::class)->middleware('auth');
-Route::resource('/dashboard/documents', DocumentController::class)->middleware('auth');
-Route::get('/dashboard/posts/checkSlug', [DashboardPostController::class, 'checkSlug'])->middleware('auth');
-Route::get('/dashboard/reports', [DashboardReportController::class, 'index'])->middleware('auth');
-Route::get('/dashboard/reports/{report:id}', [DashboardReportController::class, 'show'])->middleware('auth');
-Route::delete('/dashboard/reports/{report:id}', [DashboardReportController::class, 'destroy'])->middleware('auth');
-Route::get('/dashboard/password', [UserController::class, 'edit'])->middleware('auth');
-Route::put('/dashboard/password', [UserController::class, 'update'])->middleware('auth');
+Route::resource('/dashboard/categories', AdminCategoryController::class)->except('show')->middleware('admin');
+Route::resource('/dashboard/posts', DashboardPostController::class)->middleware('admin');
+Route::resource('/dashboard/documents', DocumentController::class)->middleware('admin');
+Route::get('/dashboard/posts/checkSlug', [DashboardPostController::class, 'checkSlug'])->middleware('admin');
+Route::get('/dashboard/reports', [DashboardReportController::class, 'index'])->middleware('admin');
+Route::get('/dashboard/reports/{report:id}', [DashboardReportController::class, 'show'])->middleware('admin');
+Route::delete('/dashboard/reports/{report:id}', [DashboardReportController::class, 'destroy'])->middleware('admin');
+Route::get('/dashboard/password', [UserController::class, 'edit'])->middleware('admin');
+Route::put('/dashboard/password', [UserController::class, 'update'])->middleware('admin');
 
 

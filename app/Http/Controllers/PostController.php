@@ -35,4 +35,10 @@ class PostController extends Controller
             "post" => $postingan
         ]);
     }
+
+
+    public function all(){
+        $posts = Post::all();
+        return response()->json($posts);
+    }
 }

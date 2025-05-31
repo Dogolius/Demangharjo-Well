@@ -4,11 +4,11 @@
 <div class="row justify-content-center">
     <div class="col-md-5">
         <main class="form-registration w-100 m-auto">
-            <h1 class="h3 mb-3 fw-normal text-center">Registration Form</h1>
+          <h1 class="h3 mb-3 fw-normal text-center text-light">Please register</h1>
             <form action="/register" method="POST">
               @csrf
               <div class="d-flex justify-content-center">
-                <img class="mb-4" src="https://karedok.net/old/files/u1/laravel-logo.jpg" alt="" width="136" height="57">
+                <img class="mb-4" src="/img/logo_tegal.png" alt="" width="170" height="136">
               </div>
           
               <div class="form-floating">
@@ -48,9 +48,9 @@
                 @enderror
               </div>
               <button class="w-100 btn btn-lg btn-primary mt-2" type="submit">Register</button>
-              <p class="mt-2 mb-2 text-muted">&copy; 2023</p>
             </form>
-            <small class="d-block text-center mt-1">Already registered? <a href="/login">Login Now</a></small>
+            <a href="/login"><h6 class="mt-2 mb-3 fw-normal text-center text-light">Sudah punya akun</h6></a>
+            <p class="mt-2 mb-2 text-muted">&copy; 2023</p>
         </main>
     </div>
 </div>

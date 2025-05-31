@@ -42,8 +42,9 @@
               @enderror
             </div>
             <button class="w-100 btn btn-lg btn-primary" type="submit">Login</button>
-            <p class="mt-2 mb-2 text-muted">&copy; 2023</p>
           </form>
+          <a href="/register"><h6 class="mt-2 mb-3 fw-normal text-center text-light">Daftar</h6></a>
+          <p class="mt-2 mb-2 text-muted">&copy; 2023</p>
       </main>
     </div>
 </div>
