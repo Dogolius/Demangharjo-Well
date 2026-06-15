@@ -65,10 +65,10 @@ Route::resource('/dashboard/categories', AdminCategoryController::class)->except
 Route::resource('/dashboard/posts', DashboardPostController::class)->middleware('admin');
 Route::resource('/dashboard/documents', DocumentController::class)->middleware('admin');
 Route::get('/dashboard/posts/checkSlug', [DashboardPostController::class, 'checkSlug'])->middleware('admin');
-Route::get('/dashboard/reports', [DashboardReportController::class, 'index'])->middleware('admin');
-Route::get('/dashboard/reports/{report:id}', [DashboardReportController::class, 'show'])->middleware('admin');
-Route::delete('/dashboard/reports/{report:id}', [DashboardReportController::class, 'destroy'])->middleware('admin');
-Route::get('/dashboard/password', [UserController::class, 'edit'])->middleware('admin');
-Route::put('/dashboard/password', [UserController::class, 'update'])->middleware('admin');
+Route::get('/dashboard/reports', [DashboardReportController::class, 'index'])->middleware('auth');
+Route::get('/dashboard/reports/{report:id}', [DashboardReportController::class, 'show'])->middleware('auth');
+Route::delete('/dashboard/reports/{report:id}', [DashboardReportController::class, 'destroy'])->middleware('auth');
+Route::get('/dashboard/password', [UserController::class, 'edit'])->middleware('auth');
+Route::put('/dashboard/password', [UserController::class, 'update'])->middleware('auth');
 
 

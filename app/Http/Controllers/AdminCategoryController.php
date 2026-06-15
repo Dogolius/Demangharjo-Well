@@ -54,7 +54,7 @@ class AdminCategoryController extends Controller
         ]);
 
         if($request->file('image')){
-            $imagePath = $request->file('image')->store('public/categories-images');
+            $imagePath = $request->file('image')->store('categories-images');
             $validatedData['image'] = preg_replace('[public/]', '', $imagePath);
         }
 

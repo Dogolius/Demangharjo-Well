@@ -40,10 +40,10 @@
               Welcome back, {{ auth()->user()->name }}
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              @if(auth()->user()->username === 'admin')
+              {{-- @if(auth()->user()->username === 'admin') --}}
               <li><a class="dropdown-item" href="/dashboard/reports"><i class="bi bi-menu-button-wide-fill"></i> My Dashboard</a></li>
               <li><hr class="dropdown-divider"></li>
-              @endif
+              {{-- @endif --}}
               <li>
                 <form action="logout" method="POST">
                   @csrf

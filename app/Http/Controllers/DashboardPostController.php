@@ -55,7 +55,7 @@ class DashboardPostController extends Controller
         ]);
 
         if($request->file('image')){
-            $imagePath = $request->file('image')->store('public/post-images');
+            $imagePath = $request->file('image')->store('post-images');
             $validatedData['image'] = preg_replace('[public/]', '', $imagePath);
         }
 

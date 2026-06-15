@@ -34,10 +34,16 @@ class ReportController extends Controller
         ]);
 
         if($request->file('image')){
-            $imagePath = $request->file('image')->store('public/report-images');
+            // possible code for production
+            // $imagePath = $request->file('image')->store('public/report-images');
+            // $validatedData['image'] = preg_replace('[public/]', '', $imagePath);
+
+            // alternatively, you can use Storage facade to get the URL
+            $imagePath = $request->file('image')->store('report-images', 'public');
             $validatedData['image'] = preg_replace('[public/]', '', $imagePath);
         }
 
+        $validatedData['reporter_name'] = auth()->user()->name;
         Report::create($validatedData);
 
         return redirect('/room')->with('success', 'Aduan berhasil disampaikan');

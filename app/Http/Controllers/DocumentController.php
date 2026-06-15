@@ -86,7 +86,7 @@ class DocumentController extends Controller
                 $image = $document->realisasi;
                 unlink(storage_path('app/public/'.$image));
             }
-            $imagePath = $request->file('realisasi')->store('public/document-images');
+            $imagePath = $request->file('realisasi')->store('document-images');
             $validatedData['realisasi'] = preg_replace('[public/]', '', $imagePath);
         } else{
             $validatedData['realisasi'] = $document->realisasi;
@@ -98,7 +98,7 @@ class DocumentController extends Controller
                 $image = $document->transparansi;
                 unlink(storage_path('app/public/'.$image));
             }
-            $imagePath = $request->file('transparansi')->store('public/document-images');
+            $imagePath = $request->file('transparansi')->store('document-images');
             $validatedData['transparansi'] = preg_replace('[public/]', '', $imagePath);
         }else{
             $validatedData['transparansi'] = $document->transparansi;
@@ -110,7 +110,7 @@ class DocumentController extends Controller
                 $image = $document->struktur;
                 unlink(storage_path('app/public/'.$image));
             }
-            $imagePath = $request->file('struktur')->store('public/document-images');
+            $imagePath = $request->file('struktur')->store('document-images');
             $validatedData['struktur'] = preg_replace('[public/]', '', $imagePath);
         }else{
             $validatedData['struktur'] = $document->struktur;
@@ -122,7 +122,7 @@ class DocumentController extends Controller
                 $image = $document->visi;
                 unlink(storage_path('app/public/'.$image));
             }
-            $imagePath = $request->file('visi')->store('public/document-images');
+            $imagePath = $request->file('visi')->store('document-images');
             $validatedData['visi'] = preg_replace('[public/]', '', $imagePath);
         }else{
             $validatedData['visi'] = $document->visi;

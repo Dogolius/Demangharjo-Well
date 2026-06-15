@@ -13,8 +13,11 @@
             </form>
 
             @if ($post->image)
-            <div style="max-height: 350px; overflow:hidden">
-                <img src="{{ asset('storage/' . $post->image) }}" class="card-img-top img-fluid my-3" alt="{{ $post->category->name }}">
+            <div class="my-3 d-flex justify-content-center">
+                <img src="{{ asset('storage/' . $post->image) }}"
+                     alt="{{ $post->title }}"
+                     class="my-3"
+                     style="max-height:350px; max-width:100%; height:auto; width:auto; display:block;">
             </div>
             @else
                 <img src="https://source.unsplash.com/1200x400?{{ $post->category->name }}" class="card-img-top img-fluid my-3" alt="{{ $post->category->name }}">

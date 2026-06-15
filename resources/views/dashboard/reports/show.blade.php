@@ -12,13 +12,17 @@
             </form>
 
             @if ($report->image)
-            <div style="max-height: 350px; overflow:hidden">
-                <img src="{{ asset('storage/' . $report->image) }}" class="card-img-top img-fluid my-3" alt="{{ $report->title }}">
-            </div>
++            <div class="my-3 d-flex justify-content-center">
++                <img src="{{ asset('storage/' . $report->image) }}"
++                     alt="{{ $report->title }}"
++                     class="my-3"
++                     style="max-height:350px; max-width:100%; height:auto; width:auto; display:block;">
++            </div>
             @endif
             
             <h5>{{ $report->title }}</h5>
-            
+            <h6>by: {{ $report->reporter_name }}</h6>
+
             <article class="my-3 fs-5">
                 <small>{!! $report->body !!}</small>  
             </article>

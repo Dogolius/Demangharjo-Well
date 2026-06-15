@@ -15,6 +15,12 @@ class DashboardReportController extends Controller
      */
     public function index()
     {
+        $user = auth()->user();
+        if($user->username !== 'admin'){
+            return view('dashboard.reports.index',[
+            'reports' => Report::latest()->where('reporter_name', $user->name)->get()
+        ]);
+        }
         return view('dashboard.reports.index',[
             'reports' => Report::latest()->get()
         ]);
