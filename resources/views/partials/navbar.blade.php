@@ -22,6 +22,9 @@
             </ul>
           </li>
           <li class="nav-item">
+            <a class="nav-link {{ Request::is('data') ? "active" : "" }}" href="/data">Data Demangharjo</a> 
+          </li>
+          <li class="nav-item">
             <a class="nav-link {{ Request::is('blog') ? "active" : "" }}" href="/blog">Seputar Demangharjo</a> 
           </li>
           <li class="nav-item">

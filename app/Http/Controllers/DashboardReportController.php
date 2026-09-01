@@ -38,6 +38,25 @@ class DashboardReportController extends Controller
             'report' => $report
         ]);
     }
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Models\Report  $report
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, Report $report)
+    {
+        //
+        $rules = [
+            'response' => 'required',
+        ];
+        $validatedData =  $request->validate($rules);
+
+        Report::where('id', $report->id)->update($validatedData);
+
+        return redirect('/dashboard/reports')->with('success', 'Report berhasil diperbarui');
+    }
 
     /**
      * Remove the specified resource from storage.

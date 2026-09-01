@@ -48,6 +48,8 @@ Route::get('/about/vision', [AboutController::class, 'vision']);
 Route::get('/about/apbd', [AboutController::class, 'apbd']);
 Route::get('/about/destination', [AboutController::class, 'destination']);
 
+// Route data chart
+Route::get('/data', [ReportController::class, 'createdata']);
 // Route seputar demangharjo
 Route::get('/blog', [PostController::class, 'index']);
 
@@ -68,6 +70,7 @@ Route::get('/dashboard/posts/checkSlug', [DashboardPostController::class, 'check
 Route::get('/dashboard/reports', [DashboardReportController::class, 'index'])->middleware('auth');
 Route::get('/dashboard/reports/{report:id}', [DashboardReportController::class, 'show'])->middleware('auth');
 Route::delete('/dashboard/reports/{report:id}', [DashboardReportController::class, 'destroy'])->middleware('auth');
+Route::put('/dashboard/reports/{report:id}', [DashboardReportController::class, 'update'])->middleware('admin');
 Route::get('/dashboard/password', [UserController::class, 'edit'])->middleware('auth');
 Route::put('/dashboard/password', [UserController::class, 'update'])->middleware('auth');
 
